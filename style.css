@@ -1,0 +1,166 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+/* BODY */
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+
+    background:linear-gradient(
+        -45deg,
+        #ff9a9e,
+        #fad0c4,
+        #a18cd1,
+        #84fab0,
+        #8fd3f4
+    );
+
+    background-size:400% 400%;
+    animation:gradientBG 12s ease infinite;
+}
+
+/* CONTAINER */
+.container{
+    width:420px;
+    padding:30px;
+
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(10px);
+
+    border-radius:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+
+    animation:floatCard 3s ease-in-out infinite;
+}
+
+/* HEADING */
+h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#333;
+}
+
+/* LABELS */
+label{
+    display:block;
+    margin-top:12px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+/* INPUTS */
+input,
+textarea{
+    width:100%;
+    padding:12px;
+
+    border:2px solid #eee;
+    border-radius:12px;
+
+    outline:none;
+    transition:0.3s;
+}
+
+input:focus,
+textarea:focus{
+    border-color:#ff7eb3;
+    box-shadow:0 0 15px rgba(255,126,179,0.4);
+}
+
+/* BUTTON */
+button{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+
+    border:none;
+    border-radius:30px;
+
+    background:linear-gradient(
+        45deg,
+        #ff758c,
+        #ff7eb3
+    );
+
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+/* MESSAGE */
+#error{
+    text-align:center;
+    margin-top:12px;
+    font-weight:bold;
+}
+
+/* SUCCESS ANIMATION */
+.success-animation{
+    animation:bounce 1s infinite;
+}
+
+/* FLOAT CARD */
+@keyframes floatCard{
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+/* BACKGROUND */
+@keyframes gradientBG{
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* BOUNCE */
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+/* MOBILE */
+@media(max-width:500px){
+
+    .container{
+        width:90%;
+        padding:20px;
+    }
+}
